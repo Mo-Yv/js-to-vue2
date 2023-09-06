@@ -1,0 +1,180 @@
+* {
+	box-sizing: border-box;
+}
+
+.sign-in {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(29, 43, 58, 0.8);
+	overflow: hidden;
+}
+
+/* 登录和注册组件的外部容器 */
+.sign-in .sign-in-content {
+	width: 400px;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 30px;
+	background: #1d2b3a;
+	box-shadow: 0 0 20px 20px #1d2b3a;
+	position: absolute;
+	transition: opacity 0.3s linear;
+}
+
+.sign-in-content a {
+	text-decoration: none;
+	color: #00dfc4;
+}
+
+/* 标题 */
+.sign-in-content h1 {
+	width: 150px;
+	text-align: center;
+	color: #00dfc4;
+	text-align: justify;
+	text-align-last: justify;
+}
+
+/* 输入框容器 */
+.sign-in-content .inputBox {
+	position: relative;
+	width: 300px;
+	background-color: #00dfc4;
+}
+
+/* 输入框样式 */
+.sign-in-content .inputBox input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	background: #1d2b3a;
+	border-radius: 5px;
+	outline: none;
+	color: #fff;
+	font-size: 1em;
+	transition: 0.5s;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+	border: 1px solid #00dfc4;
+}
+
+/* 文本框提示词样式 */
+.inputBox .text {
+	position: absolute;
+	left: 0;
+	padding: 10px;
+	pointer-events: none;
+	font-size: 1em;
+	color: rgba(255, 255, 255, 0.5);
+	transition: 0.5s;
+}
+
+.inputBox input:valid ~ .text,
+.inputBox input:focus ~ .text {
+	color: #00dfc4;
+	transform: translateX(10px) translateY(-7px);
+	font-size: 0.65em;
+	padding: 0 10px;
+	background: #1d2b3a;
+	border-left: 1px solid #00dfc4;
+	border-right: 1px solid #00dfc4;
+	letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(3) input:valid ~ .text,
+.inputBox:nth-child(3) input:focus ~ .text {
+	background: #00dfc4;
+	color: #1d2b3a;
+	border-radius: 2px;
+}
+
+/* 输入框右侧显示成功或失败符号 */
+.sign-in-content .inputBox .status {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	right: -35px;
+	transition: all 0.3s linear;
+}
+
+.inputBox .status::before,
+.inputBox .status::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 4px;
+	transition: 0.3s;
+}
+
+.inputBox .status::after {
+	width: 4px;
+	height: 100%;
+}
+
+/* 成功的符号 */
+.inputBox .status.pass {
+	transform: rotate(-45deg) translate(2px, -10px);
+}
+
+.inputBox  .status.pass::before,
+.inputBox .status.pass::after {
+	background-color: #0f0;
+	box-shadow: none;
+}
+
+.inputBox .status.pass::after {
+	height: 55%;
+}
+
+/* 失败的符号 */
+.inputBox .status.fail::before,
+.inputBox .status.fail::after {
+	background-color: #f00;
+	box-shadow: none;
+	transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.inputBox .status.fail::after {
+	transform: rotate(-45deg) translate(7px, 3px);
+}
+
+/* 输入框下方错误消息提示 */
+.sign-in-content .inputBox .error {
+	width: 300px;
+	height: 20px;
+	line-height: 20px;
+	color: #f00;
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+}
+
+/* 登录和注册组件的提交按钮 */
+.sign-in-content .sign-in-submit {
+	width: 300px;
+	height: 50px;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	background-color: #1d2b3a;
+	color: #00dfc4;
+	border: 1px solid #00dfc4;
+	transition: 0.5s;
+}
+
+.sign-in-content .sign-in-submit:hover {
+	cursor: pointer;
+	border: 1px solid #1d2b3a;
+	color: #1d2b3a;
+	background: #00dfc4;
+}
