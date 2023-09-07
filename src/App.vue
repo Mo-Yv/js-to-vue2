@@ -16,14 +16,10 @@ export default {
 
 <style scoped>
 #app {
-	overflow: hidden;
+	overflow-x: auto;
 }
 
 .navbar {
 	z-index: 999;
 }
-
-/* .router-view {
-	margin-top: 50px;
-} */
 </style>
